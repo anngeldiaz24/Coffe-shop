@@ -8,14 +8,13 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
 
-    public function register(Request $request)
+    public function register(RegistroRequest $request)
     {
-        dd('hola');
         //validar el registro
         $data = $request->validated();
     }
 
-    public function login(RegistroRequest $request)
+    public function login(Request $request)
     {
 
     }
