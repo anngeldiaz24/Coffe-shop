@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Debes de ejecutar php artisan serve para que se establezca comunicaciòn
+
 //Generar respuesta tipo JSON para poder consumir en React
 Route::get('/categorias', [CategoriaController::class, 'index']);
