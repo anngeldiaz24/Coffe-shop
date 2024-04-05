@@ -23,14 +23,23 @@ class RegistroRequest extends FormRequest
     public function rules(): array
     {
         return [
-        "name" => ["required","string"],
-        "email" => ["required","email","unique:users,email"],
-        "password" => [
-            "required",
-            "confirmed",
-            PasswordRules::min(8)->letters()->symbols()->numbers()
-        ]
+            "name" => ["required","string","min:5"],
+            "email" => ["required","email","unique:users,email"],
+            "password" => [
+                "required",
+                "confirmed",
+                PasswordRules::min(8)->letters()->symbols()->numbers()
+            ]
         ];
 
     }
+
+    /* public function messages()
+    {
+        return [
+            atributo.validacion
+            'name.required' => 'El nombre es obligatorio.',
+            'email.email' => 'El email no es válido.',
+        ];
+    } */
 }
