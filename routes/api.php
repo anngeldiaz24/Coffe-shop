@@ -28,13 +28,13 @@ Route::middleware('auth:sanctum')->group(function () {
 
     //Accedes a todos los metodos
     Route::apiResource('/pedidos', PedidoController::class);
+
+    //Generar respuesta tipo JSON para poder consumir en React
+    //Para acceder es /api/categorias
+    Route::apiResource('/categorias', CategoriaController::class);
+    Route::apiResource('/productos', ProductoController::class);
 });
 
-
-//Generar respuesta tipo JSON para poder consumir en React
-//Para acceder es /api/categorias
-Route::apiResource('/categorias', CategoriaController::class);
-Route::apiResource('/productos', ProductoController::class);
 
 //Autenticación
 Route::post('/registro', [AuthController::class, 'register']);
